@@ -39,7 +39,18 @@ class Movie
      result =stars.map{|star| Star.new(star)}
      return result
   end
+def remaining_budget()
+  sql ="SELECT (movies.budget - castings.fee) AS remaining_budget
+   FROM  movies
+   INNER JOIN castings
+   ON castings.movie_id = movies.id
+   WHERE movie_id = $1;"
+   values = [@id]
+   remaining_budget = SqlRunner.run(sql, values).first()
+   result =remaining_budget["remaining_budget"]
+   return result
 
+ end
 
   # class methods:
   def self.all()
