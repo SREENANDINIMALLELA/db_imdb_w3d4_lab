@@ -60,7 +60,7 @@ casting1= Casting.new(
   {
   'movie_id' => movie1.id,
   'star_id' => star1.id,
-  'fee'=> 1000
+  'fee'=> 100000
   }
 )
 casting1.save()
@@ -69,7 +69,7 @@ casting2= Casting.new(
   {
   'movie_id' => movie2.id,
   'star_id' => star2.id,
-  'fee'=> 500
+  'fee'=> 500000
   }
 )
 casting2.save()

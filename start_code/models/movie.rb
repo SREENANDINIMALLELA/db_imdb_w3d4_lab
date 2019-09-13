@@ -32,12 +32,12 @@ class Movie
   def stars()
     sql ="SELECT stars.* FROM stars
     INNER JOIN castings
-    on castings.star_id = star_id  WHERE movie_id = $1
+    on castings.star_id = stars.id  WHERE movie_id = $1
      "
      values = [@id]
      stars = SqlRunner.run(sql, values)
      result =stars.map{|star| Star.new(star)}
-     return result 
+     return result
   end
 
 
